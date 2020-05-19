@@ -1,0 +1,73 @@
+<!-- 收货地址 -->
+<view class="cart_address">
+  <!-- 如果没有获取用户地址,显示这个 -->
+  <view class="cart_btn" wx:if="{{!address.userName}}">
+    <button type="primary" plain bindtap="handleChooseAddress">添加收货地址</button>
+  </view>
+  <!-- 否则显示这个 -->
+  <view class="cart_address_warp" wx:else>
+    <view class="cart_address_name_wrap">
+      <view class="cart_address_name">收货人: {{address.userName}}</view>
+      <view class="cart_address_dizhi">{{address.all}}</view>
+    </view>
+    <view class="cart_address_phone">{{address.telNumber}}</view>
+  </view>
+</view>
+
+<!-- 购物车 -->
+<view class="cart">
+  <!-- 标题 -->
+  <view class="cart_title">购物车</view>
+  <!-- 如果购物车数据不为空 那么显示这个 -->
+  <block wx:if="{{cart.length !== 0}}">
+    <view class="cart_main" wx:for="{{cart}}" wx:key="goods_id">
+      <!-- 复选框 -->
+      <view class="cart_main_checkbox">
+        <checkbox-group bindchange="handleItemChange" data-id="{{item.goods_id}}">
+          <checkbox checked="{{item.checked}}"></checkbox>
+        </checkbox-group>
+      </view>
+      <!-- 商品图片链接 -->
+      <navigator class="cart_main_img">
+        <image src="{{item.goods_small_logo}}" mode="widthFix"></image>
+      </navigator>
+      <!-- 商品介绍 -->
+      <view class="cart_main_info">
+        <view class="cart_main_name">{{item.goods_name}}</view>
+        <view class="cart_main_wrap">
+          <view class="cart_main_price">￥{{item.goods_price}}</view>
+          <view class="cart_main_number">
+            <view class="cart_main_sub" bindtap="handleNumEdit" data-id="{{item.goods_id}}" data-opraction="{{-1}}">-</view>
+            <view class="cart_main_num">{{item.num}}</view>
+            <view class="cart_main_sub" bindtap="handleNumEdit" data-id="{{item.goods_id}}" data-opraction="{{1}}">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <!-- 否则显示这个 -->
+  <block wx:else>
+    <view class="cart_image">
+      <image src="https://shop.test.dudugua.com/public/mobile/static/images/kongb4.png" mode="widthFix"></image>
+    </view>
+  </block>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="tools">
+  <!-- 复选框 -->
+  <view class="tools_allCheckbox">
+    <checkbox-group bindchange="handleAllChange">
+      <checkbox checked="{{allChecked}}">全选</checkbox>
+    </checkbox-group>
+  </view>
+  <!-- 总价格 -->
+  <view class="tools_price">
+    <view class="tools_price_top">
+      合计:<text class="tools_price_top_jiage">￥{{totalPrice}}</text>
+    </view>
+    <text class="tools_text">包含运费</text>
+  </view>
+  <!-- 结算 -->
+  <view class="tools_pay" bindtap="handlePay">结算({{totalNum}})</view>
+</view>

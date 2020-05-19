@@ -1,0 +1,31 @@
+<view>
+  <!-- 搜索框 -->
+  <SerachInput></SerachInput>
+  <!-- Tabs栏 -->
+  <Tabs Tabs="{{Tabs}}" bindhandleItemChange="handleItemChange">
+    <!-- 左侧商品列表 -->
+    <block wx:if="{{Tabs[0].isActive}}">
+      <view class="tabs_left">
+        <navigator class="goods_item" wx:for="{{goodsList}}" wx:key="goods_id" url="../goods_detail/goods_detail?goods_id={{item.goods_id}}">
+          <!-- 左侧商品图片 -->
+          <view class="goods_img">
+            <image src="{{item.goods_small_logo ? item.goods_small_logo : 'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix"></image>
+          </view>
+          <!-- 右侧商品内容 -->
+          <view class="goods_content">
+            <view class="goods_content_title">{{item.goods_name}}</view>
+            <view class="goods_content_price">￥{{item.goods_price}}</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <!-- 中间商品列表 -->
+    <block wx:elif="{{Tabs[1].isActive}}">
+      <view class="tabs_center"></view>
+    </block>
+    <!-- 右侧商品列表 -->
+    <block wx:else>
+      <view class="tabs_right"></view>
+    </block>
+  </Tabs>
+</view>

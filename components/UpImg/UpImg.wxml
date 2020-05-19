@@ -1,0 +1,4 @@
+<view class="UpImg_main">
+  <image src="{{src}}"></image>
+  <icon type="clear" size="23" color="red"></icon>   
+</view>

@@ -1,0 +1,40 @@
+page {
+  background-color: #dedede;
+}
+
+.goods_search {
+  .goods_search_row {
+    display: flex;
+    padding: 20rpx;
+    input {
+      flex: 1;
+      height: 60rpx;
+      background-color: #fff;
+      font-size: 24rpx;
+    }
+    button {
+      width: 90rpx;
+      height: 60rpx;
+      background-color: #fff;
+      margin-left: 20rpx;
+      font-size: 24rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #666;
+    }
+  }
+  .goods_search_content {
+    background-color: #fff;
+    margin: 0 20rpx;
+    .goods_search_text {
+      padding: 15rpx;
+      border-bottom: 1px solid #ccc;
+      font-size: 26rpx;
+      // 文字单行显示,超出隐藏
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}

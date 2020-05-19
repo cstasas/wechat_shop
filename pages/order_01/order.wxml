@@ -1,0 +1,4 @@
+  <!-- Tabs栏 -->
+  <Tabs Tabs="{{Tabs}}" bindhandleItemChange="handleItemChange">
+    内容
+  </Tabs>

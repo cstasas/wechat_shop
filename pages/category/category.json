@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "SerachInput": "../../components/SearchInput/SerachInput"
+  },
+  "navigationBarTitleText": "商品分类"
+}

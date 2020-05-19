@@ -1,0 +1,46 @@
+<!-- 收货地址 -->
+<view class="cart_address">
+  <view class="cart_address_warp">
+    <view class="cart_address_name_wrap">
+      <view class="cart_address_name">收货人: {{address.userName}}</view>
+      <view class="cart_address_dizhi">{{address.all}}</view>
+    </view>
+    <view class="cart_address_phone">{{address.telNumber}}</view>
+  </view>
+</view>
+
+<!-- 购物车 -->
+<view class="cart">
+  <!-- 标题 -->
+  <view class="cart_title">购物车</view>
+  <view class="cart_main" wx:for="{{cart}}" wx:key="goods_id">
+    <!-- 商品图片链接 -->
+    <navigator class="cart_main_img">
+      <image src="{{item.goods_small_logo}}" mode="widthFix"></image>
+    </navigator>
+    <!-- 商品介绍 -->
+    <view class="cart_main_info">
+      <view class="cart_main_name">{{item.goods_name}}</view>
+      <view class="cart_main_wrap">
+        <view class="cart_main_price">￥{{item.goods_price}}</view>
+        <view class="cart_main_number">
+          <view class="cart_main_num">X {{item.num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 底部工具栏 -->
+<view class="tools">
+  <!-- 总价格 -->
+  <view class="tools_price">
+    <view class="tools_price_top">
+      合计:<text class="tools_price_top_jiage">￥{{totalPrice}}</text>
+    </view>
+    <text class="tools_text">包含运费</text>
+  </view>
+  <!-- 结算 -->
+  <view class="tools_pay" bindtap="handlePay">支付({{totalNum}})</view>
+</view>

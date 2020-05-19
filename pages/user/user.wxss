@@ -1,0 +1,129 @@
+page {
+  background-color: #ccc;
+}
+.user_container {
+  position: relative;
+}
+.user_container .user_img_wrap {
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+}
+.user_container .user_img_wrap .user_image {
+  position: absolute;
+  height: 45vh;
+  filter: blur(5px);
+}
+.user_container .user_img_wrap .user_img {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.user_container .user_img_wrap .user_img image {
+  width: 150rpx;
+  height: 150rpx;
+  border: 1px solid #666;
+  border-radius: 50%;
+}
+.user_container .user_img_wrap .user_img .user_name {
+  margin-top: 50rpx;
+  font-size: 40rpx;
+  color: #fff;
+  font-weight: 500;
+}
+.user_container .user_btn_warp {
+  height: 40vh;
+  width: 100%;
+  background-color: var(--themeColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user_container .user_btn_warp .user_btn {
+  padding: 30rpx;
+  border: 1px solid #ccc;
+  color: #fff;
+  font-size: 40rpx;
+  font-weight: 500;
+  border-radius: 20rpx;
+}
+.user_container .user_main {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  top: 36vh;
+  transform: translateX(-50%);
+  font-size: 24rpx;
+  color: #666;
+  padding-bottom: 90rpx;
+}
+.user_container .user_main .user_main_collect {
+  background-color: #fff;
+  padding: 10rpx 0;
+  margin-bottom: 30rpx;
+}
+.user_container .user_main .user_main_collect .user_collect_wrap {
+  display: flex;
+}
+.user_container .user_main .user_main_collect .user_collect_wrap navigator {
+  flex: 1;
+  text-align: center;
+}
+.user_container .user_main .user_main_collect .user_collect_wrap navigator .user_collect_num {
+  color: var(--themeColor);
+}
+.user_container .user_main .user_main_order {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+.user_container .user_main .user_main_order .user_order_title {
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.user_container .user_main .user_main_order .user_order .user_order_wrap {
+  display: flex;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.user_container .user_main .user_main_order .user_order .user_order_wrap navigator {
+  flex: 1;
+}
+.user_container .user_main .user_main_order .user_order .user_order_wrap navigator .iconfont {
+  color: var(--themeColor);
+  font-size: 36rpx;
+}
+.user_container .user_main .user_main_order .user_order .user_order_wrap navigator .fontsize {
+  font-size: 40rpx;
+}
+.user_container .user_main .user_main_order .user_order .user_order_wrap .allorder {
+  margin-top: 6rpx;
+}
+.user_container .user_main .user_main_address {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+}
+.user_container .user_main .user_main_service {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+.user_container .user_main .user_main_service .user_service_top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx;
+}
+.user_container .user_main .user_main_service .user_service_center {
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.user_container .user_main .user_main_service .user_service_bottom {
+  padding: 20rpx;
+}
+.user_container .user_main .user_main_recommend {
+  background-color: #fff;
+  padding: 20rpx;
+}

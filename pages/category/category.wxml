@@ -1,0 +1,32 @@
+<view class="cates">
+  <!-- 搜索框 -->
+  <SerachInput></SerachInput>
+  <view class="cates_container">
+    <!-- 左侧菜单栏 -->
+    <view class="menu_left">
+      <scroll-view scroll-y>
+        <view class="{{index === currentIndex ? 'active' : ''}}" wx:for="{{leftCateList}}" wx:key="*this" bindtap="handleMenu" data-index="{{index}}">
+          {{item}}
+        </view>
+      </scroll-view>
+    </view>
+    <!-- 右侧商品内容 -->
+    <view class="menu_right">
+      <scroll-view scroll-y scroll-top="{{scrollTop}}">
+        <view class="goods_list" wx:for="{{rightCateList}}" wx:for-item="item1" wx:for-index="index1" wx:key="cat_id">
+          <view class="goods_title">
+            <text>/</text>
+            <view>{{item1.cat_name}}</view>
+            <text>/</text>
+          </view>
+          <view class="content">
+            <navigator wx:for="{{item1.children}}" wx:key="cat_id" wx:for-item="item2" wx:for-index="index2" url="../goods_list/goods_list?cid={{item2.cat_id}}">
+              <image src="{{item2.cat_icon}}" mode="widthFix" />
+              <view>{{item2.cat_name}}</view>
+            </navigator>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
